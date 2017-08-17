@@ -1,27 +1,17 @@
 <template>
   <div id="app">
-    <input type="text" placeholder="Country name" v-model="countrydata">
-    <template v-for="country in countries">
-      <h3 v-if="countrydata == country.name">{{country.name}}</h3>
-    </template>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  data () {
+  name:'App',
+  data(){
     return {
-      countries:[],
-      countrydata:''
-    }
-  },
-  created(){
-    fetch("https://restcountries.eu/rest/v2/all").then((res) => {
-      return res.json(); }).then((res) => {
-        this.countries=res; });
-      }
 
+    }
+  }
   }
 
 </script>
