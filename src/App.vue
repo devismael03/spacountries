@@ -1,7 +1,8 @@
 <template>
   <div id="app">
+    <input type="text" placeholder="Country name" v-model="countrydata">
     <template v-for="country in countries">
-      <h1>hello</h1>
+      <h3 v-if="countrydata == country.name">{{country.name}}</h3>
     </template>
   </div>
 </template>
@@ -11,7 +12,8 @@ export default {
   name: 'app',
   data () {
     return {
-      countries:[]
+      countries:[],
+      countrydata:''
     }
   },
   created(){
